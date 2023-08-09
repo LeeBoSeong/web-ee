@@ -26,8 +26,12 @@
 						const list = JSON.parse(xhr.responseText);
 						console.log(list);
 						let html = '';
-						for(const movie od list){
-							
+						for(const movie of list){
+							html += '<tr>';
+							html += '<td>' + movie.miNum + '</td>';
+							html += '<td>' + movie.miName + '</td>';
+							html += '<td>' + movie.miDesc + '</td>';
+							html += '</tr>';
 						}
 						document.querySelector('#tbody').innerHTML = html;
 					}
