@@ -25,7 +25,10 @@
 					if(xhr.status===200){
 						const list = JSON.parse(xhr.responseText);
 						console.log(list);
-						let html = 'shit';
+						let html = '';
+						for(const movie od list){
+							
+						}
 						document.querySelector('#tbody').innerHTML = html;
 					}
 				}
