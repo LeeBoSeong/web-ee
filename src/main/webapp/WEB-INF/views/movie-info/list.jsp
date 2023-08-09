@@ -17,7 +17,7 @@
 		</tbody>
 	</table>
 	<script>
-		const getMovie = function(){
+ 		const getMovie = function(){
 			const xhr = XMLHttpRequest();
 			xhr.open("GET","/list");
 			xhr.onreadystatechange = function(){
@@ -39,7 +39,7 @@
 			}
 			xhr.send();
 		}
-		window.addEventListener('load',getMovie);
+		window.addEventListener('load',getMovie); 
 	</script>
 </body>
 </html>

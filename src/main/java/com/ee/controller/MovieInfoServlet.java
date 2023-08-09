@@ -31,10 +31,10 @@ public class MovieInfoServlet extends HttpServlet {
 		if("list".equals(uri)) {
 			response.setContentType("application/json;charset=UTF-8");
 			json = gson.toJson(miService.selectMovieInfoList(null));
-			System.out.println(json);
-			PrintWriter out = response.getWriter();
-			out.print(json);
 		}
+		System.out.println(json);
+		PrintWriter out = response.getWriter();
+		out.print(json);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

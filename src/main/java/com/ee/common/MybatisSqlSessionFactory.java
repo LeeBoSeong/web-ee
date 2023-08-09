@@ -29,6 +29,7 @@ public class MybatisSqlSessionFactory {
 	}
 	
 	public static void main(String[] args) {
+		
 		SqlSessionFactory ssf = getSqlSessionFactory();
 		SqlSession session = ssf.openSession();
 		MovieInfoMapper movieList = session.getMapper(MovieInfoMapper.class);
