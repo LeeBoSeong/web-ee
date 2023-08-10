@@ -18,8 +18,8 @@
 	</table>
 	<script>
  		const getMovie = function(){
-			const xhr = XMLHttpRequest();
-			xhr.open("GET","/list");
+			const xhr = new XMLHttpRequest();
+			xhr.open("GET","/list/list");
 			xhr.onreadystatechange = function(){
 				if(xhr.readyState===4){
 					if(xhr.status===200){

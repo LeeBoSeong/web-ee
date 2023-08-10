@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +28,7 @@ public class MovieInfoServlet extends HttpServlet {
 		String uri = request.getRequestURI();
 		int idx = uri.lastIndexOf("/");
 		uri = uri.substring(idx+1);
+		String path = "/WEB-INF/views/movie-info/list.jsp";
 		String json = "";
 		if("list".equals(uri)) {
 			response.setContentType("application/json;charset=UTF-8");
@@ -35,6 +37,9 @@ public class MovieInfoServlet extends HttpServlet {
 		System.out.println(json);
 		PrintWriter out = response.getWriter();
 		out.print(json);
+		
+		RequestDispatcher rd = request.getRequestDispatcher(path);
+		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
